@@ -1,4 +1,4 @@
-# Examen PGM
+# Examen Test C
 
 ## Beginnen
 
@@ -33,7 +33,37 @@ Tijdens het examen zullen de wijzigingen iedere tien minuten ingediend worden. J
 
 ## Opgave
 
-De opgave staat beschreven in het bestand [`opgave.pdf`](./opgave.pdf).
+1. Open de test workspace en test het compileren via de aangeleverde `build` taak. Voer daarna de code eenmalig uit met de `run (+ build)` taak. Controleer of je `debugging works – FALSE` ziet en een memory leak zoals in onderstaande output. Indien dit niet het geval is, contacteer de begeleiders.
+
+   ```txt
+   > Executing task in folder examen: ./examen.exe <
+
+   debugging works – FALSE
+
+   =================================================================
+   ==57194==ERROR: LeakSanitizer: detected memory leaks
+
+   Direct leak of 5000 byte(s) in 1 object(s) allocated from:
+       #0 0x7efd47948bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+       #1 0x558e6b033205 in main /home/student/examen/main.c:5
+       #2 0x7efd476700b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+   SUMMARY: AddressSanitizer: 5000 byte(s) leaked in 1 allocation(s).
+   The terminal process terminated with exit code: 1
+
+   Terminal will be reused by tasks, press any key to close it.
+   ```
+
+1. Test of je kan debuggen. Zet hiervoor in de main functie een breakpoint en start het debuggen door in de menu "Run" > "Start Debugging" te kiezen.
+   * Op het examen zullen dergelijke VSCode build en debug taken ook aangeleverd worden, je hoeft die dus niet zelf te kunnen opstellen.
+1. Als bovenstaande gelukt is,
+   * wijzig de printf output in de `main` functie van `"debugging works – FALSE"` naar `"debugging works – TRUE"`, en
+   * commentarieer de memleak uit.
+1. Voer het programma opnieuw uit door middel van de "run" task en controleer of de wijzigingen kloppen.
+
+Als dit klaar is, volg dan de instructies om in te dienen.
+
+**BELANGRIJK:** Indien één van bovenstaande stappen niet gelukt is, neem dan tijdig (i.e. minstens 4 dagen voor het examen) contact op met de begeleiders. Geef in je email een beschrijving van het issue en indien nodig verdere informatie (OS, VSCode versie, welke addons geïnstalleerd, etc.).
 
 ## Indienen
 
