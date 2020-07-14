@@ -1,0 +1,45 @@
+# Examen PGM
+
+## Beginnen
+
+1. Start de Ubuntu shell.
+1. Download de opgave repository. Geef je UGent gebruikersnaam (`{{username}}`) en wachtwoord in wanneer dit gevraagd wordt.
+
+   ```bash
+   git clone {{clone_url}}
+   ```
+
+   > ⓘ Indien je hier een authenticatie fout krijgt op Windows is het waarschijnlijk omdat het UGent wachtwoord dat Windows opgeslagen heeft fout is. Je kan dit wachtwoord aanpassen via het "Referentiebeheer" programma, zoek voor de "github.ugent.be" referentie bij "Windows Referenties".
+
+1. Open het examen in VSCode vanuit Ubuntu.
+
+   ```bash
+   code {{repo_name}}/Examen.code-workspace
+   ```
+
+   *Indien je op Windows werkt, controleer dan of je links onderaan het VSCode venster "WSL" of "WSL: Ubuntu" ziet staan zoals op onderstaande screenshot.*
+
+   ![vscode WSL](.examen-tools/vscode-remote-ubuntu.png)
+1. Open het bestand `gestart.txt`, verander `neen` in `ja` en sla de wijzigingen op ("File" > "Save").
+1. Voer de taak "Start Examen" uit (in de bovenste menu "Terminal" > "Run Task..." en dan "start examen"). **Geef bovenaan het VSCode venster je UGent gebruikersnaam en wachtwoord in.**
+
+   ![Gebruikersnaam en wachtwoord](.examen-tools/username.png)
+
+   Dit dient de wijzigingen in het `gestart.txt` bestand in, en zal iedere drie minuten opnieuw alle wijzigingen indienen tot je de taak stopzet of VSCode afsluit.
+
+1. Controleer op <{{clone_url}}> of het `gestart.txt` bestand aangepast is.
+
+Tijdens het examen zullen de wijzigingen iedere tien minuten ingediend worden. Je kan dit zelf ook manueel doen door middel van de task "manueel indienen". Om zeker te zijn dat je geen git conflicten krijgt tijdens het examen mag je **git niet zelf gebruiken** tijdens het examen. Gebruik enkel de tasks om in te dienen.
+
+## Opgave
+
+De opgave staat beschreven in het bestand [`opgave.pdf`](./opgave.pdf).
+
+## Indienen
+
+1. Voer de task "manueel indienen" uit (via de menu bovenaan: "Terminal" > "Run Task..." en kies "manueel indienen").
+1. Controleer op <{{clone_url}}> of alle wijzigingen doorgevoerd zijn.
+1. Sluit VSCode af zodat het automatisch indienen stopt.
+1. Laat je begeleider via teams weten dat je klaar bent.
+
+Als je jouw code op GitHub ziet staan dan heb je correct ingediend. Je kan zoveel indienen als je wilt. De laatst ingediende code zal verbeterd worden. Na het indienen mag je VSCode op je computer afsluiten. Bij het afsluiten zal het automatisch indienen ook gestopt worden.

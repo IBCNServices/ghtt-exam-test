@@ -1,0 +1,60 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "start examen",
+            "type": "shell",
+            "command": ".examen-tools/submit.sh",
+            "isBackground": true,
+            "problemMatcher": [],
+        },
+        {
+            "label": "manueel indienen",
+            "type": "shell",
+            "command": ".examen-tools/submit.sh",
+            "args": ["manual"],
+            "problemMatcher": [],
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g",
+                "-O0",
+                "-Wall",
+                "-fsanitize=address",
+                "-fno-omit-frame-pointer",
+                "*.c",
+                "-lm",
+                "-o",
+                "examen.exe",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+        },
+        {
+            "label": "run (+ build)",
+            "type": "shell",
+            "command": "./examen.exe",
+            "dependsOn": [ "build" ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "presentation": {
+                // Show and focus the terminal after running, so you can immediately play without having to click the terminal.
+                "focus": true,
+                "reveal": "always",
+            }
+        }
+    ]
+}
